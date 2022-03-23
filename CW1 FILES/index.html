@@ -104,8 +104,17 @@
     </div>
           <!--Vue Instance && Functions-->
     <script>
+        Vue.component('my-component', {
+            template: '<div> GLOBAL COMPONENT </div>'
+        })
+
+        const Component = {
+            template: '<div> LOCAL COMPONENT </div>'
+        }
+
     let clubstore = new Vue({
         el: '#app' ,
+        components: {'my-component': Component},
         data: {
             search: '',
             showProduct: true,
